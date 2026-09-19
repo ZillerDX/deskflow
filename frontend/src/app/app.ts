@@ -976,6 +976,7 @@ export interface RoomScheduleResponse {
   `]
 })
 export class App implements OnInit, OnDestroy {
+  private http = inject(HttpClient);
   private getBackendUrl(): string {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('deskflow_backend_url');
@@ -985,7 +986,7 @@ export class App implements OnInit, OnDestroy {
         return 'http://localhost:5000';
       }
     }
-    return 'https://deskflow-production.up.railway.app';
+    return 'https://deskflow-production-5f78.up.railway.app';
   }
 
   private baseUrl = this.getBackendUrl();
